@@ -1,17 +1,9 @@
-import {
-   Body,
-   HttpException,
-   HttpStatus,
-   Injectable,
-   Post,
-   UnauthorizedException,
-} from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, UnauthorizedException } from '@nestjs/common';
 import { Create_UserDto } from '../user/create_user.dto';
 import { UserService } from '../user/user.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
 import { UserModel } from '../user/user.model';
-import { annotateModelWithIndex } from 'sequelize-typescript';
 
 @Injectable()
 export class AuthService {
